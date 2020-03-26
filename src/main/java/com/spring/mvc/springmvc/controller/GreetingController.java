@@ -14,27 +14,30 @@
  * limitations under the License.
  */
 
-package com.spring.mvc.springmvc;
+package com.spring.mvc.springmvc.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.Map;
 
 /**
- * The application runner class.
+ * The greeting controller layer in the spring MVC architecture.
  *
  * @author tommy.hamblin.
  */
-@SpringBootApplication
-public class SpringMvcApplication extends SpringBootServletInitializer
+@Controller
+public class GreetingController
 {
-	/**
-	 * The main method used to invoke the application.
-	 *
-	 * @param args - array of arguments.
-	 */
-	public static void main(final String[] args)
-	{
-		SpringApplication.run(SpringMvcApplication.class, args);
-	}
+    /**
+     * Returns the JSP for the greeting mapping.
+     *
+     * @param model - the model to update.
+     * @return String - the JSP name.
+     */
+    @GetMapping("greeting")
+    public String getGreeting(final Map<String, Object> model)
+    {
+        model.put("message", "Hello Tommy");
+        return "greeting";
+    }
 }

@@ -14,27 +14,35 @@
  * limitations under the License.
  */
 
-package com.spring.mvc.springmvc;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+package com.spring.mvc.springmvc.model;
 
 /**
- * The application runner class.
+ * The registration model layer in the spring MVC architecture.
  *
  * @author tommy.hamblin.
  */
-@SpringBootApplication
-public class SpringMvcApplication extends SpringBootServletInitializer
+public class Registration
 {
-	/**
-	 * The main method used to invoke the application.
-	 *
-	 * @param args - array of arguments.
-	 */
-	public static void main(final String[] args)
-	{
-		SpringApplication.run(SpringMvcApplication.class, args);
-	}
+    /** The String variable for the name. */
+    private String name;
+
+    /**
+     * Getter.
+     *
+     * @return name - the registration name.
+     */
+    public String getName()
+    {
+        return this.name;
+    }
+
+    /**
+     * Setter.
+     *
+     * @param name - the name to set.
+     */
+    public void setName(final String name)
+    {
+        this.name = name;
+    }
 }

@@ -13,15 +13,12 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Greeting</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <a href="greeting">Greeting</a>
-    <a href="registration">Registration</a>
+    <h1>${message}</h1>
 </body>
 </html>
