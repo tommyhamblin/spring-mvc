@@ -16,6 +16,8 @@
 
 package com.spring.mvc.springmvc.model;
 
+import javax.validation.constraints.NotEmpty;
+
 /**
  * The registration model layer in the spring MVC architecture.
  *
@@ -24,6 +26,7 @@ package com.spring.mvc.springmvc.model;
 public class Registration
 {
     /** The String variable for the name. */
+    @NotEmpty
     private String name;
 
     /**

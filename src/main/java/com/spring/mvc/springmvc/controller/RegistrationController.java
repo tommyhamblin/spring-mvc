@@ -17,12 +17,12 @@
 package com.spring.mvc.springmvc.controller;
 
 import com.spring.mvc.springmvc.model.Registration;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Map;
 
 /**
  * The registration controller layer in the spring MVC architecture.
@@ -51,8 +51,15 @@ public class RegistrationController
      * @return String - the JSP name.
      */
     @PostMapping("registration")
-    public String addRegistration(final @ModelAttribute("registration")Registration registration)
+    public String addRegistration(final @Valid @ModelAttribute("registration")Registration registration,
+                                  final BindingResult result)
     {
+        if(result.hasErrors())
+        {
+            System.out.println("Has Errors!");
+            return "registration";
+        }
+
         System.out.println("Registration: " + registration.getName());
         return "redirect:registration";
     }

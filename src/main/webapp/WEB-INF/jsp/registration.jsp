@@ -18,11 +18,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/registration.css" />
     <title>Registration</title>
 </head>
 <body>
     <h1>Registration</h1>
     <form:form modelAttribute="registration">
+        <form:errors path="*" cssClass="errorblock" element="div" />
         <table>
             <tr>
                 <td>
@@ -31,9 +33,12 @@
                 <td>
                     <form:input path="name" />
                 </td>
+                <td>
+                    <form:errors path="name" cssClass="error" />
+                </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <input type="submit" value="Add Registration">
                 </td>
             </tr>
